@@ -6,7 +6,10 @@ import { setStateProducts } from "../actions/products";
 
 class Header extends Component {
   state = {
-    cartDropdown: false
+    cartDropdown: false,
+    cartCounter: this.props.cartProducts
+      ? this.props.cartProducts.reduce((sum, item) => (sum += item.counter))
+      : 0
   };
 
   componentDidMount() {
@@ -17,8 +20,6 @@ class Header extends Component {
       .then(data => {
         productsRaw = [...data.products];
         this.props.dispatch(setStateProducts(productsRaw));
-
-        console.log("header fetch:", productsRaw);
       })
       .catch(console.log);
   }
@@ -48,11 +49,11 @@ const mapStateToProps = state => {
   console.log("HEADER, map state to props: ", state);
   if (state.cartProducts) {
     return {
-      products: [...state.cartProducts]
+      cartProducts: [...state.cartProducts]
     };
   }
   return {
-    products: []
+    cartProducts: undefined
   };
 };
 
