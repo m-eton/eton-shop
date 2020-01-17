@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
 
   height: 70px;
   background: linear-gradient(to right, $accent1, $accent2);
@@ -25,23 +24,23 @@
 }
 
 .nav-link {
-  padding-left: 2em;
+  padding-left: 1em;
   color: $white;
   text-decoration: none;
 }
+.nav-link.cart-link {
+  position: relative;
+  font-size: 2em;
+  svg {
+    cursor: pointer;
+  }
+}
+
 .active-shop {
-  // padding: 2em;
   height: 100%;
   font-weight: bold;
 }
-.active-cart {
-  display: none;
-}
 
-.cart {
-  position: relative;
-  font-size: 2em;
-}
 .cart-counter {
   position: absolute;
   top: -0.2em;

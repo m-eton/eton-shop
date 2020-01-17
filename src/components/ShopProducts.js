@@ -12,8 +12,8 @@ class ShopProducts extends Component {
     error: null
   };
 
-  addToCart = product => {
-    this.props.dispatch(addToCart(product));
+  addToCart = (id, title) => {
+    this.props.dispatch(addToCart(id, title));
   };
 
   componentDidMount() {

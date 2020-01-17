@@ -1,0 +1,54 @@
+.cart-drop-menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 5px);
+  right: -7px;
+  width: 250px;
+  padding: 0.8em;
+
+  font-size: 0.6em;
+  color: $black;
+  background: $background;
+  box-shadow: 0 0.1em 0.3em rgba($black, 0.5);
+  border-radius: $border-radius;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+  }
+}
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &:last-child {
+    padding-bottom: 0.5em;
+  }
+}
+
+.to-cart-link {
+  text-decoration: none;
+  div {
+    color: $white;
+    background: $accent1;
+    border-radius: $border-radius;
+    cursor: pointer;
+    width: 100%;
+    p {
+      padding: 0.5em;
+      margin: 0;
+      text-align: center;
+    }
+    &:active {
+      box-shadow: inset 0.5em 0.5em 0.5em rgba($white, 0.3);
+      p {
+        transform: translate(2px, 2px);
+      }
+    }
+  }
+}

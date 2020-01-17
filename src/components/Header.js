@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
+import CartDropMenu from "./CartDropMenu";
+
 class Header extends Component {
   state = {
     dropMenu: false
@@ -17,6 +19,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log("dropmenu:", this.state.dropMenu);
     const cartCounter = this.countProducts(this.props.cartProducts);
     return (
       <header className="header">
@@ -30,20 +33,24 @@ class Header extends Component {
           >
             Shop
           </NavLink>
-          <NavLink
-            to="/cart"
-            activeClassName="active-cart"
-            className="nav-link"
+          <div
+            className="nav-link cart-link"
+            onClick={() => {
+              this.setState(() => ({ dropMenu: !this.state.dropMenu }));
+            }}
           >
-            <div className="cart">
-              <FaShoppingCart />
-              {cartCounter !== 0 && (
-                <div className="cart-counter">
-                  <p>{cartCounter}</p>
-                </div>
-              )}
-            </div>
-          </NavLink>
+            <FaShoppingCart />
+            {cartCounter !== 0 && (
+              <div className="cart-counter">
+                <p>{cartCounter}</p>
+              </div>
+            )}
+            {/* <div className="cart">
+            </div> */}
+            {this.state.dropMenu && (
+              <CartDropMenu cartProducts={this.props.cartProducts} />
+            )}
+          </div>
         </div>
       </header>
     );
