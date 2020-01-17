@@ -1,9 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-const CartPage = () => (
-  <div>
-    <p>some page info</p>
-  </div>
-);
+class CartPage extends Component {
+  render() {
+    return <div>page info</div>;
+  }
+}
 
-export default CartPage;
+const mapStateToProps = state => {
+  return {
+    cartProducts: state.cartProducts
+  };
+};
+
+export default connect(mapStateToProps)(CartPage);
