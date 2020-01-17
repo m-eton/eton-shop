@@ -20,7 +20,7 @@ const Product = ({ id, title, price, description, image, add }) => (
       <button
         className="add-btn"
         onClick={() => {
-          add(id, title);
+          add(id);
         }}
       >
         <p>Add to Cart</p>

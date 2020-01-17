@@ -1,6 +1,5 @@
-export const addToCart = (id, title, counter = 1) => ({
+export const addToCart = (product, counter = 1) => ({
   type: "ADD_TO_CART",
-  id,
-  title,
+  product,
   counter
 });

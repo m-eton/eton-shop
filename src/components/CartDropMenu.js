@@ -4,15 +4,21 @@ import { NavLink } from "react-router-dom";
 const CartDropMenu = ({ cartProducts }) => (
   <div className="cart-drop-menu">
     <div className="cart-menu-items">
-      {cartProducts.map((product, i) => (
-        <>
-          <div className="cart-item" key={product.id}>
-            <div className="cart-item-name">{product.name}</div>
-            <div className="cart-item-counter">{product.counter}</div>
-          </div>
-          {cartProducts.length - 1 !== i && <hr />}
-        </>
-      ))}
+      {cartProducts.map((obj, i) => {
+        console.log("obj in cart drop", obj);
+        return (
+          <>
+            <div className="cart-item" key={obj.product.id}>
+              <div className="cart-item-img">
+                <img src={obj.product.image} alt={obj.product.title} />
+              </div>
+              <div className="cart-item-name">{obj.product.title}</div>
+              <div className="cart-item-counter">{obj.counter}</div>
+            </div>
+            {cartProducts.length - 1 !== i && <hr />}
+          </>
+        );
+      })}
     </div>
 
     <NavLink to="/cart" className="to-cart-link">

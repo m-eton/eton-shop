@@ -14,12 +14,14 @@ class Header extends Component {
     const productsInCart =
       products.length === 0
         ? 0
-        : products.reduce((sum, item) => (sum += item.counter), 0);
+        : products.reduce((sum, item) => {
+            // console.log("count item", item);
+            return (sum += item.counter);
+          }, 0);
     return productsInCart;
   }
 
   render() {
-    console.log("dropmenu:", this.state.dropMenu);
     const cartCounter = this.countProducts(this.props.cartProducts);
     return (
       <header className="header">

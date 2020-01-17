@@ -1,12 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
-class CartPage extends Component {
-  render() {
-    console.log(this.props.cartProducts);
-    return <div>page info</div>;
-  }
-}
+import CartPageItem from "./CartPageItem";
+
+const CartPage = props => {
+  console.log("cart page: ", props.cartProducts);
+  return (
+    <div className="cart-items">
+      {props.cartProducts.map(obj => (
+        <CartPageItem {...obj} />
+      ))}
+    </div>
+  );
+};
 
 const mapStateToProps = state => {
   return {

@@ -30,6 +30,14 @@
     padding-bottom: 0.5em;
   }
 }
+.cart-item-img {
+  width: 3em;
+  height: 2em;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
 
 .to-cart-link {
   text-decoration: none;

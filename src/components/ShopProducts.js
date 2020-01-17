@@ -12,8 +12,9 @@ class ShopProducts extends Component {
     error: null
   };
 
-  addToCart = (id, title) => {
-    this.props.dispatch(addToCart(id, title));
+  addToCart2 = id => {
+    const theProduct = this.props.products.find(product => product.id === id);
+    this.props.dispatch(addToCart(theProduct));
   };
 
   componentDidMount() {
@@ -45,7 +46,7 @@ class ShopProducts extends Component {
     return (
       <div className="shop-products">
         {this.props.products.map(product => (
-          <Product key={product.id} {...product} add={this.addToCart} />
+          <Product key={product.id} {...product} add={this.addToCart2} />
         ))}
       </div>
     );
