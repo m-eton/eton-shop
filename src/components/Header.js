@@ -1,59 +1,63 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-
-import { setStateProducts } from "../actions/products";
+import { FaShoppingCart } from "react-icons/fa";
 
 class Header extends Component {
   state = {
-    cartDropdown: false,
-    cartCounter: this.props.cartProducts
-      ? this.props.cartProducts.reduce((sum, item) => (sum += item.counter))
-      : 0
+    dropMenu: false,
+    cartCounter:
+      this.props.cartProducts.length !== 0
+        ? this.props.cartProducts.reduce(
+            (sum = 0, item) => (sum += item.counter)
+          )
+        : 0
   };
 
-  componentDidMount() {
-    let productsRaw = [];
-
-    fetch("https://my-json-server.typicode.com/brankostancevic/products/db")
-      .then(res => res.json())
-      .then(data => {
-        productsRaw = [...data.products];
-        this.props.dispatch(setStateProducts(productsRaw));
-      })
-      .catch(console.log);
-  }
-
   render() {
+    const { cartCounter } = this.state;
+
     console.log("cartProducts:", this.props.cartProducts);
     return (
-      <header>
-        <h1>Online Shop</h1>
-        <NavLink
-          to="/"
-          exact={true}
-          activeClassName="is-active"
-          className="nav-link"
-        >
-          Shop
-        </NavLink>
-        <NavLink to="/cart" activeClassName="is-active" className="nav-link">
-          Cart
-        </NavLink>
+      <header className="header">
+        <div className="logo">EtonDigital</div>
+        <div className="navigation">
+          <NavLink
+            to="/"
+            exact={true}
+            activeClassName="active-shop"
+            className="nav-link"
+          >
+            Shop
+          </NavLink>
+          <NavLink
+            to="/cart"
+            activeClassName="active-cart"
+            className="nav-link"
+          >
+            <div className="cart">
+              <FaShoppingCart />
+              {cartCounter !== 0 && (
+                <div className="cart-counter">
+                  <p>{cartCounter}</p>
+                </div>
+              )}
+            </div>
+          </NavLink>
+        </div>
       </header>
     );
   }
 }
 
 const mapStateToProps = state => {
-  console.log("HEADER, map state to props: ", state);
   if (state.cartProducts) {
     return {
       cartProducts: [...state.cartProducts]
     };
   }
   return {
-    cartProducts: undefined
+    cartProducts: []
   };
 };
 

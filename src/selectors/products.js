@@ -3,7 +3,7 @@
 export default (products, { text, sortBy }) => {
   return products
     .filter(product => {
-      return product.title.includes(text);
+      return product.title.toLowerCase().includes(text.toLowerCase());
     })
     .sort((a, b) => {
       switch (sortBy) {

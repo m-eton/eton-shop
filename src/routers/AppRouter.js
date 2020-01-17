@@ -9,11 +9,13 @@ import NotFoundPage from "../components/NotFoundPage";
 const AppRouter = () => (
   <BrowserRouter>
     <Header />
-    <Switch>
-      <Route path="/" component={ShopPage} exact={true} />
-      <Route path="/cart" component={CartPage} />
-      <Route component={NotFoundPage} />
-    </Switch>
+    <div className="layout">
+      <Switch>
+        <Route path="/" component={ShopPage} exact={true} />
+        <Route path="/cart" component={CartPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </div>
   </BrowserRouter>
 );
 

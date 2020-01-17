@@ -1,15 +1,17 @@
 html {
   font-size: 62.5%;
 }
+* {
+  box-sizing: border-box;
+}
 body {
   font-size: 1.6rem;
-  box-sizing: border-box;
+  font-family: sans-serif;
   background: $background;
+  color: $black;
 }
 
-.nav-link {
-  padding-right: 1em;
-}
-.is-active {
-  font-weight: bold;
+.layout {
+  padding: $screen-padding-xs;
+  // more sizes
 }

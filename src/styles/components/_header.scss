@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  height: 70px;
+  background: linear-gradient(to right, $accent1, $accent2);
+  color: $white;
+  padding: $screen-padding-xs;
+  // more sizes
+}
+
+.logo {
+  font-size: 1.8em;
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-link {
+  padding-left: 2em;
+  color: $white;
+  text-decoration: none;
+}
+.active-shop {
+  // padding: 2em;
+  height: 100%;
+  font-weight: bold;
+}
+.active-cart {
+  display: none;
+}
+
+.cart {
+  position: relative;
+  font-size: 2em;
+}
+.cart-counter {
+  position: absolute;
+  top: -0.2em;
+  right: -0.3em;
+  width: 0.7em;
+  height: 0.7em;
+  border: 2px solid $pink;
+  background: $black;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 0.5em;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+}

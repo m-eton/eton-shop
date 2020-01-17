@@ -5,8 +5,9 @@ import { sortBy, setTextFilter } from "../actions/filters";
 
 const ShopFilters = props => {
   return (
-    <div>
+    <div className="shop-filter">
       <input
+        className="search"
         type="text"
         placeholder="search by name"
         defaultValue={props.filters.text}
@@ -15,6 +16,7 @@ const ShopFilters = props => {
         }}
       />
       <select
+        className="sort"
         defaultValue={props.filters.sortBy}
         onChange={e => {
           props.dispatch(sortBy(e.target.value));
