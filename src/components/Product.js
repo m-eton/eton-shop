@@ -2,7 +2,7 @@ import React from "react";
 // link?
 import { FaCartPlus } from "react-icons/fa";
 
-const Product = ({ id, title, price, description, image }) => (
+const Product = ({ id, title, price, description, image, add }) => (
   <div className="product-card">
     <div className="product-img">
       <img src={image} alt={title + id} />
@@ -17,7 +17,12 @@ const Product = ({ id, title, price, description, image }) => (
         <div className="description">{description}></div>
       </div>
 
-      <button className="add-btn">
+      <button
+        className="add-btn"
+        onClick={() => {
+          add(id);
+        }}
+      >
         <p>Add to Cart</p>
         <FaCartPlus />
       </button>

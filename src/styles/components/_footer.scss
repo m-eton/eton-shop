@@ -1,13 +1,11 @@
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 50px;
   background: linear-gradient(to right, $accent1, $accent2);
   color: $white;
-
-  padding: 0.3em;
-
-  p {
-    text-align: center;
-  }
   a {
     color: $white;
     text-decoration: none;

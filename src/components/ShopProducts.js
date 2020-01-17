@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setStateProducts } from "../actions/products";
+import { addToCart } from "../actions/cart";
 import selectProducts from "../selectors/products";
 import Product from "./Product";
 
@@ -9,6 +10,10 @@ class ShopProducts extends Component {
   state = {
     isLoading: false,
     error: null
+  };
+
+  addToCart = product => {
+    this.props.dispatch(addToCart(product));
   };
 
   componentDidMount() {
@@ -40,7 +45,7 @@ class ShopProducts extends Component {
     return (
       <div className="shop-products">
         {this.props.products.map(product => (
-          <Product key={product.id} {...product} />
+          <Product key={product.id} {...product} add={this.addToCart} />
         ))}
       </div>
     );

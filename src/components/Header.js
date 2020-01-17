@@ -5,19 +5,19 @@ import { FaShoppingCart } from "react-icons/fa";
 
 class Header extends Component {
   state = {
-    dropMenu: false,
-    cartCounter:
-      this.props.cartProducts.length !== 0
-        ? this.props.cartProducts.reduce(
-            (sum = 0, item) => (sum += item.counter)
-          )
-        : 0
+    dropMenu: false
   };
 
-  render() {
-    const { cartCounter } = this.state;
+  countProducts(products) {
+    const productsInCart =
+      products.length === 0
+        ? 0
+        : products.reduce((sum, item) => (sum += item.counter), 0);
+    return productsInCart;
+  }
 
-    console.log("cartProducts:", this.props.cartProducts);
+  render() {
+    const cartCounter = this.countProducts(this.props.cartProducts);
     return (
       <header className="header">
         <div className="logo">EtonDigital</div>
@@ -50,15 +50,7 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  if (state.cartProducts) {
-    return {
-      cartProducts: [...state.cartProducts]
-    };
-  }
-  return {
-    cartProducts: []
-  };
-};
-
+const mapStateToProps = state => ({
+  cartProducts: [...state.cartProducts]
+});
 export default connect(mapStateToProps)(Header);

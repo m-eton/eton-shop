@@ -12,12 +12,6 @@ body {
 }
 
 .layout {
-  &:first-child {
-    padding-top: 1em;
-  }
-  &:last-child {
-    padding-bottom: 1em;
-  }
   min-height: calc(100vh - 120px); // minus header + footer
   padding: $screen-padding-xs;
   // more sizes
