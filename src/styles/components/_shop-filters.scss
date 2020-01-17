@@ -5,12 +5,12 @@
   .search {
     width: 70%;
     padding: 0.5em;
-    border-radius: 5px;
+    border-radius: $border-radius;
   }
   .sort {
     width: 27%;
     margin-left: 3%;
     padding: 0.5em;
-    border-radius: 5px;
+    border-radius: $border-radius;
   }
 }

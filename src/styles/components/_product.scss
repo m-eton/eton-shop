@@ -1,5 +1,5 @@
 .product-card {
-  border-radius: 1em;
+  border-radius: $border-radius;
   overflow: hidden;
   background: white;
   height: 440px;
@@ -46,7 +46,7 @@
 .add-btn {
   width: 100%;
   padding: 0.5em;
-  border-radius: 0.5em;
+  border-radius: $border-radius;
   border: none;
 
   background: purple;
