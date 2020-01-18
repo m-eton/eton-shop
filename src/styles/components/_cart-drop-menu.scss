@@ -25,6 +25,7 @@
 .cart-item {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   &:last-child {
     padding-bottom: 0.5em;
