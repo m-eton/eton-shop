@@ -29,7 +29,17 @@ class CartPage extends Component {
 
   buy = () => {
     this.props.dispatch(removeAllFromCart());
-    //show msg and redirect
+    this.setState(() => ({
+      showMessage: true
+    }));
+    //show msg
+    setInterval(
+      //redirect
+      this.setState(() => ({
+        showMessage: false
+      })),
+      3000
+    );
   };
 
   render() {

@@ -1,19 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const CartDropMenu = ({ cartProducts }) => (
+const CartDropMenu = ({ cartProducts, toggleMenu }) => (
   <div className="cart-drop-menu">
     <div className="cart-menu-items">
       {cartProducts.map((obj, i) => {
-        console.log("obj in cart drop", obj);
         return (
           <>
-            <div className="cart-item" key={obj.product.id}>
-              <div className="cart-item-img">
+            <div className="cart-menu-item" key={obj.product.id}>
+              <div className="cart-menu-item-img">
                 <img src={obj.product.image} alt={obj.product.title} />
               </div>
-              <div className="cart-item-name">{obj.product.title}</div>
-              <div className="cart-item-counter">{obj.counter}</div>
+              <div className="cart-menu-item-name">{obj.product.title}</div>
+              <div className="cart-menu-item-counter">
+                {(obj.counter !== 1 && "x " + obj.counter) || "-"}
+              </div>
             </div>
             {cartProducts.length - 1 !== i && <hr />}
           </>
@@ -21,7 +22,13 @@ const CartDropMenu = ({ cartProducts }) => (
       })}
     </div>
 
-    <NavLink to="/cart" className="to-cart-link">
+    <NavLink
+      to="/cart"
+      className="to-cart-link"
+      onClick={() => {
+        toggleMenu();
+      }}
+    >
       <div>
         <p>Checkout</p>
       </div>

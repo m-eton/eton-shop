@@ -1,4 +1,4 @@
-.cart-card {
+.cart-item-card {
   position: relative;
 
   display: flex;
@@ -15,7 +15,7 @@
   box-shadow: 0 0.1em 0.3em rgba($black, 0.5);
 }
 
-.cart-img {
+.cart-item-img {
   min-height: 100%;
   width: 200px;
   img {
@@ -24,7 +24,7 @@
   }
 }
 
-.cart-label {
+.cart-item-label {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,27 +33,34 @@
   flex-grow: 1;
 }
 
-.cart-price {
+.cart-item-price {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  padding-top: 1em;
+  width: 100%;
+  padding: 1em 0.5em 0 1em;
   .price,
   .count {
-    padding-right: 1em;
+    padding-right: 0.5em;
   }
 }
+.cart-item-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-.cart-control {
+.cart-item-control {
   cursor: pointer;
   color: $accent2;
   &:active {
     transform: translate(1px, 1px);
   }
 }
-.cart-control.close {
+.cart-item-control.close {
   color: $accent1;
   position: absolute;
   top: 0.5em;
