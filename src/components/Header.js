@@ -37,17 +37,20 @@ class Header extends Component {
               to="/"
               exact={true}
               activeClassName="active-shop"
-              className="nav-link"
+              className="nav-link shop-link"
             >
               Shop
             </NavLink>
             {showCartIcon && (
               <div className="nav-link cart-link">
-                <FaShoppingCart
+                <div
+                  className={`cart-svg ${cartCounter === 0 && "disable"}`}
                   onClick={() => {
                     this.toggleMenu();
                   }}
-                />
+                >
+                  <FaShoppingCart />
+                </div>
                 {cartCounter !== 0 && (
                   <div className="cart-counter">
                     <p>{cartCounter}</p>

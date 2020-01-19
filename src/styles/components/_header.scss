@@ -24,15 +24,24 @@
 }
 
 .nav-link {
-  padding-left: 1em;
   color: $white;
   text-decoration: none;
+}
+.nav-link.shop-link {
+  padding: 1em 0 1em 1em;
 }
 .nav-link.cart-link {
   position: relative;
   font-size: 2em;
-  svg {
+  .cart-svg {
+    padding: 0 0 0 1em;
     cursor: pointer;
+
+    &.disable {
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.6;
+    }
   }
 }
 
