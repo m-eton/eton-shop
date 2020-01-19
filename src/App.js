@@ -18,7 +18,6 @@ function App() {
 export default App;
 
 //notes:
-// redirect page nakon BUY klika
 // loading animacija dok se ucitavaju item-i
 // manje kartice za mobile size
 // grid layout za siroke ekrane

@@ -32,42 +32,48 @@ class CartPage extends Component {
     this.setState(() => ({
       showMessage: true
     }));
-    //show msg
-    setInterval(
-      //redirect
+    setTimeout(() => {
       this.setState(() => ({
         showMessage: false
-      })),
-      3000
-    );
+      }));
+      this.props.history.push("/");
+    }, 2000);
   };
 
   render() {
-    console.log("cart page: ", this.props.cartProducts);
-
     const totalPrice = this.props.cartProducts.reduce(
       (total, obj) => (total += obj.product.price * obj.counter),
       0
     );
+    let purchased = "";
+    if (this.state.showMessage) {
+      purchased = "purchased";
+    }
     return (
-      <div className="cart-page">
-        <div className="cart-items">
-          {this.props.cartProducts.map(obj => (
-            <CartPageItem
-              {...obj}
-              removeFromCart={this.removeFromCart2}
-              removeAllFromCart={this.removeAllFromCart2}
-              counterPlus={this.counterPlus2}
-              counterMinus={this.counterMinus2}
-            />
-          ))}
+      <div className="cart-page-container">
+        <div className={`cart-page ${purchased}`}>
+          <div className="cart-items">
+            {this.props.cartProducts.map(obj => (
+              <CartPageItem
+                {...obj}
+                removeFromCart={this.removeFromCart2}
+                removeAllFromCart={this.removeAllFromCart2}
+                counterPlus={this.counterPlus2}
+                counterMinus={this.counterMinus2}
+              />
+            ))}
+          </div>
+          <div className="cart-total">
+            <div className="cart-total-text">Total:</div>
+            <div className="cart-total-price">{totalPrice.toFixed(2)} $</div>
+          </div>
+          <div className="cart-buy" onClick={() => this.buy()}>
+            <p>BUY</p>
+          </div>
         </div>
-        <div className="cart-total">
-          <div className="cart-total-text">Total:</div>
-          <div className="cart-total-price">{totalPrice.toFixed(2)} $</div>
-        </div>
-        <div className="cart-buy" onClick={() => this.buy()}>
-          <p>BUY</p>
+        <div className={`buy-message ${purchased}`}>
+          <h2>Purchase successful!</h2>
+          <p>This is just a demo message.</p>
         </div>
       </div>
     );
