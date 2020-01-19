@@ -16,9 +16,3 @@ function App() {
 }
 
 export default App;
-
-//notes:
-// pogledaj template za sajt u skype-u
-// manje kartice za mobile size
-// grid layout za siroke ekrane
-// unique list key???

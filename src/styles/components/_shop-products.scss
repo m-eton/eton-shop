@@ -1,7 +1,18 @@
 .shop-products {
   padding-bottom: 1em;
   display: grid;
-  gap: 1.5em;
+  gap: 1em;
+
+  @include md-screen {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include lg-screen {
+    gap: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include xlg-screen {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 // LOADING animation

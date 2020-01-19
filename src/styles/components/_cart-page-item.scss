@@ -5,19 +5,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  margin-bottom: 1em;
-  border-radius: $border-radius;
-  overflow: hidden;
-  background: white;
-  height: 100px;
-
-  box-shadow: 0 0.1em 0.3em rgba($black, 0.5);
+  height: 90px;
 }
 
 .cart-item-img {
-  min-height: 100%;
-  width: 200px;
+  box-shadow: 0 0.1em 0.3em rgba($black, 0.5);
+  border-radius: $border-radius;
+  overflow: hidden;
+  height: 90px;
+  width: 140px;
   img {
     min-height: 100%;
     width: 100%;
@@ -27,25 +23,30 @@
 .cart-item-label {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+
+  .title {
+    font-weight: bold;
+  }
+}
+.cart-item-row {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-
-  flex-grow: 1;
+  width: 100%;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
 }
-
 .cart-item-price {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-
-  width: 100%;
-  padding: 1em 0.5em 0 1em;
-  .price,
-  .count {
+  .price {
     padding-right: 0.5em;
   }
 }
+
 .cart-item-controls {
   display: flex;
   flex-direction: row;
@@ -54,6 +55,7 @@
 }
 
 .cart-item-control {
+  font-size: 1.5em;
   cursor: pointer;
   color: $accent2;
   &:active {
@@ -62,7 +64,4 @@
 }
 .cart-item-control.close {
   color: $accent1;
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
 }

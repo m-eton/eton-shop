@@ -8,7 +8,9 @@
   background: linear-gradient(to right, $accent1, $accent2);
   color: $white;
   padding: $screen-padding-xs;
-  // more sizes
+  @include sm-screen {
+    padding: $screen-padding-sm;
+  }
 }
 
 .logo {

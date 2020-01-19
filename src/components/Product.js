@@ -1,5 +1,5 @@
 import React from "react";
-// link?
+
 import { FaCartPlus } from "react-icons/fa";
 
 const Product = ({ id, title, price, description, image, add }) => (

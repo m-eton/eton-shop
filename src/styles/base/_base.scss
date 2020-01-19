@@ -8,11 +8,13 @@ body {
   font-size: 1.6rem;
   font-family: sans-serif;
   background: $background;
-  color: $black;
+  color: rgba($black, 0.8);
 }
 
 .layout {
   min-height: calc(100vh - 120px); // minus header + footer1
   padding: $screen-padding-xs;
-  // more sizes
+  @include sm-screen {
+    padding: $screen-padding-sm;
+  }
 }

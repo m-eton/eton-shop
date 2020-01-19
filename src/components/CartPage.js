@@ -51,6 +51,7 @@ class CartPage extends Component {
     }
     return (
       <div className="cart-page-container">
+        <h1>Your Cart</h1>
         <div className={`cart-page ${purchased}`}>
           <div className="cart-items">
             {this.props.cartProducts.map(obj => (
