@@ -13,9 +13,9 @@ export default () => {
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
-  store.subscribe(() => {
-    const state = store.getState();
-    console.log(state);
-  });
+  // store.subscribe(() => {
+  //   const state = store.getState();
+  //   console.log(state);
+  // });
   return store;
 };

@@ -37,7 +37,7 @@ class CartPage extends Component {
         showMessage: false
       }));
       this.props.history.push("/");
-    }, 2000);
+    }, 3500);
   };
 
   render() {

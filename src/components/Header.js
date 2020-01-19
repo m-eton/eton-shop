@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
+import logo from "../logo.svg";
 import CartDropMenu from "./CartDropMenu";
 
 class Header extends Component {
@@ -31,7 +32,9 @@ class Header extends Component {
     return (
       <>
         <header className="header">
-          <div className="logo">EtonDigital</div>
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
           <div className="navigation">
             <NavLink
               to="/"

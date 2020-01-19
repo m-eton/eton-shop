@@ -5,6 +5,7 @@ import { setStateProducts } from "../actions/products";
 import { addToCart } from "../actions/cart";
 import selectProducts from "../selectors/products";
 import Product from "./Product";
+import HourGlassLoader from "./HourGlassLoader";
 
 class ShopProducts extends Component {
   state = {
@@ -40,7 +41,7 @@ class ShopProducts extends Component {
       return <p>{error.message}</p>;
     }
     if (isLoading) {
-      return <p>LOADING...</p>;
+      return <HourGlassLoader />;
     }
 
     return (

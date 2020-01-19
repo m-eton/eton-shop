@@ -3,3 +3,89 @@
   display: grid;
   gap: 1.5em;
 }
+
+// LOADING animation
+.hour-glass-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  font-size: 80px;
+  color: $accent1;
+
+  .loader-text {
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+//separate container, so 'transform' attributes wouldn't interfere
+$loader-frame-duration: 1400ms;
+.loader-frames {
+  width: 80px;
+  height: 80px;
+  animation: loader-container $loader-frame-duration infinite;
+  transform-origin: center;
+}
+
+@keyframes loader-container {
+  75% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.loader-frame {
+  position: absolute;
+  opacity: 0;
+  &.one {
+    animation: loader-frame1 $loader-frame-duration infinite;
+  }
+  &.two {
+    animation: loader-frame2 $loader-frame-duration infinite;
+  }
+  &.three {
+    animation: loader-frame3 $loader-frame-duration infinite;
+  }
+}
+
+@keyframes loader-frame1 {
+  0% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+@keyframes loader-frame2 {
+  24% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes loader-frame3 {
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
