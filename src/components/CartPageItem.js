@@ -23,7 +23,7 @@ export default class CartPageItem extends Component {
     const { counter, counterPlus, counterMinus, removeFromCart } = this.props;
     return (
       <>
-        <div className="cart-item-card" key={id}>
+        <div className="cart-item-card">
           <div className="cart-item-img">
             <img src={image} alt={title + id} />
           </div>

@@ -61,6 +61,7 @@ class CartPage extends Component {
                 removeAllFromCart={this.removeAllFromCart2}
                 counterPlus={this.counterPlus2}
                 counterMinus={this.counterMinus2}
+                key={obj.product.id}
               />
             ))}
           </div>
