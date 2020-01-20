@@ -15,6 +15,7 @@ $border-radius: 7px;
 
 $screen-padding-xs: 0 1em;
 $screen-padding-sm: 0 3em;
+$screen-padding-xlg: 0 calc((100vw - 1200px) / 2);
 
 @mixin sm-screen {
   @media (min-width: 420px) {
@@ -35,7 +36,7 @@ $screen-padding-sm: 0 3em;
 }
 
 @mixin xlg-screen {
-  @media (min-width: 1200px) {
+  @media (min-width: 1300px) {
     @content;
   }
 }

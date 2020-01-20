@@ -1,6 +1,9 @@
 .shop-filter {
   width: 100%;
   padding: 1em 0;
+  @include lg-screen {
+    padding: 1.5em 0;
+  }
 
   .search {
     width: 60%;

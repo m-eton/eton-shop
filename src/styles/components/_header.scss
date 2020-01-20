@@ -11,6 +11,9 @@
   @include sm-screen {
     padding: $screen-padding-sm;
   }
+  @include xlg-screen {
+    padding: $screen-padding-xlg;
+  }
 }
 
 .logo {
