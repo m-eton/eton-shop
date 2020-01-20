@@ -61,16 +61,22 @@ class Header extends Component {
                 )}
               </div>
             )}
+            {this.state.dropMenu && (
+              <>
+                <div
+                  className="cart-curtain"
+                  onClick={() => this.toggleMenu()}
+                />
+                <CartDropMenu
+                  cartProducts={this.props.cartProducts}
+                  toggleMenu={this.toggleMenu}
+                />
+              </>
+            )}
           </div>
         </header>
         {this.state.dropMenu && (
-          <>
-            <div className="cart-curtain" onClick={() => this.toggleMenu()} />
-            <CartDropMenu
-              cartProducts={this.props.cartProducts}
-              toggleMenu={this.toggleMenu}
-            />
-          </>
+          <div className="cart-curtain" onClick={() => this.toggleMenu()} />
         )}
       </>
     );

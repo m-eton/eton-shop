@@ -1,15 +1,16 @@
 .cart-drop-menu {
   position: absolute;
-  z-index: 10;
-  top: calc(70px - 5px);
-  right: 5px;
+  z-index: 3;
+  top: calc(70px - 15px);
+  right: -12px;
   @include sm-screen {
-    right: 15px;
+    right: -30px;
   }
-  width: 70%;
-  max-width: 300px;
+  min-width: 280px;
+  max-width: 320px;
   padding: 0.8em;
 
+  color: rgba($black, 0.8);
   background: $background;
   box-shadow: 0 0.1em 0.3em rgba($black, 0.5);
   border-radius: $border-radius;
